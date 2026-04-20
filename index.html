@@ -23,6 +23,12 @@
         <a href="projects.html" id="myBtn" class="btn">進入專案列表</a>
     </div>
 
+    <div id="schematic" style="margin-top: 40px; text-align: center; opacity: 0; transition: opacity 2s ease-in-out;">
+        <p style="color: #00ff00; font-size: 12px; letter-spacing: 2px;">[ HARDWARE_SCHEMATIC_v1.0 ]</p>
+        <img src="https://images.prismic.io/flipper-zero/36021644-2458-4796-bc94-df9b4185121b_flipper-zero-render.png" 
+             style="max-width: 80%; width: 300px; opacity: 0.7; filter: grayscale(100%) sepia(100%) hue-rotate(80deg);">
+    </div>
+
     <script>
         const titleText = "> CASPER_FLIPPER_ZERO_PROJECT";
         const subText = "狀態：系統運作中...\n目前進度：已成功連結 DNS 與 GitHub Repository。";
@@ -34,7 +40,7 @@
             if (i < titleText.length) {
                 document.getElementById("typewriter").innerHTML += titleText.charAt(i);
                 i++;
-                setTimeout(typeTitle, 100); // 打字速度，越小越快
+                setTimeout(typeTitle, 100);
             } else {
                 typeSubText();
             }
@@ -42,7 +48,6 @@
 
         function typeSubText() {
             if (j < subText.length) {
-                // 處理換行符號
                 if (subText.charAt(j) === "\n") {
                     document.getElementById("sub-text").innerHTML += "<br>";
                 } else {
@@ -51,12 +56,13 @@
                 j++;
                 setTimeout(typeSubText, 50);
             } else {
-                // 打字結束後顯示按鈕
+                // 文字打完後，顯示按鈕
                 document.getElementById("myBtn").classList.add("show-btn");
+                // 同時讓底部的圖片優雅地浮現
+                document.getElementById("schematic").style.opacity = "0.7";
             }
         }
 
-        // 網頁載入後開始執行
         window.onload = typeTitle;
     </script>
 </body>
