@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Casper's Lab</title>
+    <style>
+        /* 這裡直接複製 index.html 的 CSS，確保風格統一 */
+        body { background-color: #121212; color: #00ff00; font-family: 'Courier New', monospace; margin: 0; padding: 0; }
+        nav { background-color: #1a1a1a; border-bottom: 1px solid #00ff00; padding: 15px 50px; display: flex; gap: 30px; position: sticky; top: 0; }
+        nav a { color: #00ff00; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { text-shadow: 0 0 10px #00ff00; }
+        
+        .content-wrapper { padding: 50px; }
+        .project-card { border: 1px solid #00ff00; padding: 20px; margin-bottom: 20px; transition: 0.3s; }
+        .project-card:hover { background-color: #1a1a1a; box-shadow: 0 0 15px #00ff00; }
+        h2 { border-bottom: 1px solid #00ff00; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">ROOT</a>
+        <a href="projects.html" style="text-decoration: underline;">PROJECTS</a>
+        <a href="electronics.html">ELECTRONICS</a>
+        <a href="flipper.html">FLIPPER_ZERO</a>
+    </nav>
+
+    <div class="content-wrapper">
+        <h1>[ 已載入專案資料庫 ]</h1>
+        
+        <div class="project-card">
+            <h2>> C 語言：河內塔演算法</h2>
+            <p>描述：使用遞迴函數解決經典河內塔問題，優化移動路徑。</p>
+            <code>Status: Completed | Version: 1.0</code>
+        </div>
+
+        <div class="project-card">
+            <h2>> 電子學：順序邏輯電路分析</h2>
+            <p>描述：基於 JK 與 D Flip-Flop 的狀態圖化簡與電路設計。</p>
+            <code>Status: In_Progress | Lab: 04</code>
+        </div>
+    </div>
+
+</body>
+</html>
