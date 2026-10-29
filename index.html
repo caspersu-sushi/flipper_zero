@@ -21,6 +21,7 @@
         <h1 id="typewriter"></h1><span class="cursor">&nbsp;</span>
         <div id="sub-text"></div>
         <a href="projects.html" id="myBtn" class="btn">進入專案列表</a>
+        <a href="skills.html" id="skillBtn" class="btn">Claude Skills</a>
     </div>
 
     <div id="schematic" style="margin-top: 40px; text-align: center; opacity: 0; transition: opacity 2s;">
@@ -59,6 +60,7 @@
             } else {
                 // 文字打完後，顯示按鈕
                 document.getElementById("myBtn").classList.add("show-btn");
+                document.getElementById("skillBtn").classList.add("show-btn");
                 // 同時讓底部的圖片優雅地浮現
                 document.getElementById("schematic").style.opacity = "0.7";
             }

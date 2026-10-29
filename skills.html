@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skills - Casper's Lab</title>
+    <style>
+        /* 和 projects.html 同一套終端機風格 */
+        body { background-color: #121212; color: #00ff00; font-family: 'Courier New', monospace; margin: 0; padding: 0; }
+        nav { background-color: #1a1a1a; border-bottom: 1px solid #00ff00; padding: 15px 50px; display: flex; flex-wrap: wrap; gap: 12px 30px; position: sticky; top: 0; }
+        nav a { color: #00ff00; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { text-shadow: 0 0 10px #00ff00; }
+
+        .content-wrapper { padding: 50px; max-width: 1000px; }
+        .intro { color: #7fbf7f; margin-top: -10px; margin-bottom: 30px; }
+
+        /* 一個 skill 一張卡片:左邊是說明,右邊是下載 */
+        .skill-card { border: 1px solid #00ff00; padding: 20px; margin-bottom: 20px; transition: 0.3s;
+                      display: flex; gap: 24px; align-items: flex-start; justify-content: space-between; }
+        .skill-card:hover { background-color: #1a1a1a; box-shadow: 0 0 15px #00ff00; }
+        .skill-info { flex: 1; min-width: 0; }
+        h2 { border-bottom: 1px solid #00ff00; display: inline-block; margin-top: 0; }
+        .skill-info ul { padding-left: 20px; color: #b8f5b8; }
+        .skill-info li { margin-bottom: 4px; }
+        code { color: #7fbf7f; }
+
+        .skill-actions { display: flex; flex-direction: column; gap: 10px; flex: none; width: 180px; }
+        .btn { display: block; text-align: center; padding: 10px 16px; color: #00ff00; border: 1px solid #00ff00; text-decoration: none; transition: 0.3s; }
+        .btn:hover, .btn:focus-visible { background-color: #00ff00; color: #121212; box-shadow: 0 0 10px #00ff00; outline: none; }
+        .btn.secondary { border-style: dashed; font-size: 14px; }
+        .btn small { display: block; font-size: 11px; opacity: 0.75; }
+
+        details { margin-top: 14px; color: #b8f5b8; }
+        summary { cursor: pointer; color: #00ff00; }
+        details ol { padding-left: 22px; }
+        details li { margin-bottom: 6px; }
+
+        @media (max-width: 700px) {
+            nav { padding: 15px 20px; }
+            .content-wrapper { padding: 30px 16px; }
+            .skill-card { flex-direction: column; }
+            .skill-actions { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">ROOT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="skills.html" style="text-decoration: underline;">SKILLS</a>
+        <a href="electronics.html">ELECTRONICS</a>
+        <a href="flipper.html">FLIPPER_ZERO</a>
+    </nav>
+
+    <div class="content-wrapper">
+        <h1>[ 已載入 Claude Skills ]</h1>
+        <p class="intro">我做的 Claude skill。下載 zip 後上傳到 Claude 就能使用。</p>
+
+        <!-- 要新增 skill:複製下面整個 skill-card,改掉名稱、說明和連結 -->
+        <div class="skill-card">
+            <div class="skill-info">
+                <h2>> pdf-shelf-viewer</h2>
+                <p>描述：上傳 PDF、PPT 或 Word 講義，自動做成一個講義瀏覽頁面，點左邊的檔案就能在右邊切換觀看。</p>
+                <ul>
+                    <li>PPT、Word 自動轉成 PDF，保留原本的版面和圖片</li>
+                    <li>從第一頁讀出真正的標題，依課程分組並標示頁數</li>
+                    <li>可以跳頁、縮放，手機上也能用</li>
+                </ul>
+                <code>Status: Completed | Version: 0.1</code>
+
+                <details>
+                    <summary>安裝步驟</summary>
+                    <ol>
+                        <li>到 Claude 的 Settings → Capabilities，打開「Code execution and file creation」（新版叫「Create and edit files」）。</li>
+                        <li>按右邊的「下載 .zip」，不用解壓縮。</li>
+                        <li>到 Customize → Skills，按「+」→「+ Create skill」→「Upload a skill」，選這個 zip。</li>
+                        <li>開新聊天，上傳 PDF 或 PPT，說「幫我做成講義瀏覽器」。</li>
+                    </ol>
+                </details>
+            </div>
+            <div class="skill-actions">
+                <a class="btn" href="https://github.com/caspersu-sushi/skill/raw/main/dist/pdf-shelf-viewer.zip">[ 下載 .zip ]<small>12 KB</small></a>
+                <a class="btn secondary" href="https://github.com/caspersu-sushi/skill/tree/main/pdf-shelf-viewer" target="_blank" rel="noopener">原始碼 →</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
